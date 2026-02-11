@@ -395,22 +395,80 @@
                 <p style="color: rgba(255,255,255,0.9);">Escríbenos y reserva tu fecha. Estamos en el corazón del
                     Vedado.</p>
             </div>
-            <div class="contact-grid">
-                <div class="contact-card">
-                    <div class="contact-icon">📍</div>
-                    <h3>Ubicación</h3>
-                    <p>Calle N / 23 y 25<br>Apto 12, Edificio 332<br>Vedado, La Habana</p>
+            
+            <!-- Contact Grid + Form Side by Side -->
+            <div class="contact-wrapper">
+                <div class="contact-info">
+                    <div class="contact-card">
+                        <div class="contact-icon">📍</div>
+                        <h3>Ubicación</h3>
+                        <p>Calle N / 23 y 25<br>Apto 12, Edificio 332<br>Vedado, La Habana</p>
+                    </div>
+                    <div class="contact-card">
+                        <div class="contact-icon">📱</div>
+                        <h3>WhatsApp</h3>
+                        <p><a href="https://wa.me/5352002606">(+53) 52-00-2606</a></p>
+                    </div>
+                    <div class="contact-card">
+                        <div class="contact-icon">✉️</div>
+                        <h3>Email</h3>
+                        <p><a href="mailto:rixon404@gmail.com">rixon404@gmail.com</a></p>
+                    </div>
                 </div>
-                <div class="contact-card">
-                    <div class="contact-icon">📱</div>
-                    <h3>WhatsApp</h3>
-                    <p><a href="https://wa.me/5352002606">(+53) 52-00-2606</a></p>
-                </div>
-                <div class="contact-card">
-                    <div class="contact-icon">✉️</div>
-                    <h3>Email</h3>
-                    <p><a href="mailto:rixon404@gmail.com">rixon404@gmail.com</a></p>
-                </div>
+
+                <!-- Formulario de Interés (lado derecho) -->
+                <form id="footer-interest-form" class="contact-form" aria-label="Formulario de interés">
+                    <h3>¿Qué te interesa?</h3>
+
+                    <fieldset class="form-group">
+                        <legend>Deseo</legend>
+                        <label><input type="radio" name="deseo" value="sesion" checked> Sesión de fotos</label>
+                        <label><input type="radio" name="deseo" value="alquilar"> Alquilar el estudio</label>
+                    </fieldset>
+
+                    <!-- Bloque para sesión (1.1) -->
+                    <div id="sesion-block" class="conditional-block">
+                        <fieldset class="form-group">
+                            <legend>En</legend>
+                            <label><input type="radio" name="tipo_sesion" value="estudio" checked> Estudio</label>
+                            <label><input type="radio" name="tipo_sesion" value="exterior"> Exterior</label>
+                        </fieldset>
+
+                        <fieldset class="form-group">
+                            <legend>Cantidad de fotos</legend>
+                            <label><input type="radio" name="cantidad" value="5"> 5</label>
+                            <label><input type="radio" name="cantidad" value="10"> 10</label>
+                            <label><input type="radio" name="cantidad" value="15"> 15</label>
+                            <label><input type="radio" name="cantidad" value="20"> 20</label>
+                            <label><input type="radio" name="cantidad" value="mas de 20"> más de 20</label>
+                            <label><input type="radio" name="cantidad" value="luego me decido"> luego me decido</label>
+                        </fieldset>
+                    </div>
+
+                    <!-- Bloque tiempo / alquiler (1.2) -->
+                    <div id="tiempo-block" class="conditional-block">
+                        <fieldset class="form-group">
+                            <legend>Tiempo</legend>
+                            <label><input type="radio" name="tiempo" value="1h" checked> 1h</label>
+                            <label><input type="radio" name="tiempo" value="2h"> 2h</label>
+                            <label><input type="radio" name="tiempo" value="3h"> 3h</label>
+                            <label><input type="radio" name="tiempo" value="4h"> 4h</label>
+                            <label><input type="radio" name="tiempo" value="tarifa por hora"> tarifa por hora</label>
+                        </fieldset>
+
+                        <fieldset class="form-group">
+                            <legend>Incluir equipos</legend>
+                            <label><input type="radio" name="equipos" value="no"> No, ninguno</label>
+                            <label><input type="radio" name="equipos" value="flashes"> Solo Flashes Godox con difusores</label>
+                            <label><input type="radio" name="equipos" value="todos"> Todos (Sony a6300; Sigma Art 60mm; TTartisan 23mm; Transmisor Xpro; Flashes SK400ii + V860ii)</label>
+                        </fieldset>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="button" id="footer-send-ws" class="btn btn-primary">Enviar por WhatsApp</button>
+                        <small class="form-note">El mensaje se abrirá en WhatsApp con la información seleccionada.</small>
+                    </div>
+                </form>
             </div>
         </div>
     </section>
@@ -421,62 +479,7 @@
             <div class="footer-info">
                 <p>&copy; 2026 RixonStudio. Todos los derechos reservados. | La Habana, Cuba</p>
             </div>
-
-            <!-- Footer: formulario de interés -->
-            <form id="footer-interest-form" class="footer-form" aria-label="Formulario de interés">
-                <h4>¿Qué te interesa?</h4>
-
-                <fieldset class="form-group">
-                    <legend>Deseo</legend>
-                    <label><input type="radio" name="deseo" value="sesion" checked> Sesión de fotos</label>
-                    <label><input type="radio" name="deseo" value="alquilar"> Alquilar el estudio</label>
-                </fieldset>
-
-                <!-- Bloque para sesión (1.1) -->
-                <div id="sesion-block" class="conditional-block">
-                    <fieldset class="form-group">
-                        <legend>En</legend>
-                        <label><input type="radio" name="tipo_sesion" value="estudio" checked> Estudio</label>
-                        <label><input type="radio" name="tipo_sesion" value="exterior"> Exterior</label>
-                    </fieldset>
-
-                    <fieldset class="form-group">
-                        <legend>Cantidad de fotos</legend>
-                        <label><input type="radio" name="cantidad" value="5"> 5</label>
-                        <label><input type="radio" name="cantidad" value="10"> 10</label>
-                        <label><input type="radio" name="cantidad" value="15"> 15</label>
-                        <label><input type="radio" name="cantidad" value="20"> 20</label>
-                        <label><input type="radio" name="cantidad" value="mas de 20"> más de 20</label>
-                        <label><input type="radio" name="cantidad" value="luego me decido"> luego me decido</label>
-                    </fieldset>
-                </div>
-
-                <!-- Bloque tiempo / alquiler (1.2) -->
-                <div id="tiempo-block" class="conditional-block">
-                    <fieldset class="form-group">
-                        <legend>Tiempo</legend>
-                        <label><input type="radio" name="tiempo" value="1h" checked> 1h</label>
-                        <label><input type="radio" name="tiempo" value="2h"> 2h</label>
-                        <label><input type="radio" name="tiempo" value="3h"> 3h</label>
-                        <label><input type="radio" name="tiempo" value="4h"> 4h</label>
-                        <label><input type="radio" name="tiempo" value="tarifa por hora"> tarifa por hora</label>
-                    </fieldset>
-
-                    <fieldset class="form-group">
-                        <legend>Incluir equipos</legend>
-                        <label><input type="radio" name="equipos" value="no"> No, ninguno</label>
-                        <label><input type="radio" name="equipos" value="flashes"> Solo Flashes Godox con
-                            difusores</label>
-                        <label><input type="radio" name="equipos" value="todos"> Todos (Sony a6300; Sigma Art 60mm;
-                            TTartisan 23mm; Transmisor Xpro; Flashes SK400ii + V860ii)</label>
-                    </fieldset>
-                </div>
-
-                <div class="form-actions">
-                    <button type="button" id="footer-send-ws" class="btn btn-primary">Enviar por WhatsApp</button>
-                    <small class="form-note">El mensaje se abrirá en WhatsApp con la información seleccionada.</small>
-                </div>
-            </form>
+        </div>
     </footer>
 
     <!-- WhatsApp Floating Button -->

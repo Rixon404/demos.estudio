@@ -92,17 +92,18 @@ document.addEventListener('DOMContentLoaded', () => {
     })();
 
     // Theme (dark / light) toggle + swap whatsapp icon
-    (function initTheme(){
+    (function initTheme() {
         const btn = document.getElementById('theme-toggle');
         const whatsappImg = document.querySelector('.whatsapp-icon img');
         const storageKey = 'rix-theme';
         const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
 
         const lightIcon = 'assets/icons/whatsapp-icon.png';
-        const darkIcon  = '/icons/whatsapp-icon-dark-mode.png'; // ruta provista
+        const darkIcon = '/icons/whatsapp-icon-dark-mode.png';
 
         const applyTheme = (theme) => {
             document.documentElement.classList.toggle('dark-mode', theme === 'dark');
+            // INVERTIDO: modo claro = luna (🌙), modo oscuro = sol (☀️)
             if (btn) btn.textContent = theme === 'dark' ? '☀️' : '🌙';
             if (whatsappImg) whatsappImg.src = (theme === 'dark') ? darkIcon : lightIcon;
         };

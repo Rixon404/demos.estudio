@@ -402,12 +402,13 @@
                     <div class="contact-card">
                         <div class="contact-icon">📍</div>
                         <h3>Ubicación</h3>
-                        <p>Calle N / 23 y 25<br>Apto 12, Edificio 332<br>Vedado, La Habana</p>
+                        <p><a href="https://maps.google.com/?q=23.13990126308201,-82.38115107740893" target="_blank">Calle N / 23 y 25<br>Apto 12, Edificio 330<br>Vedado, La Habana</a></p>
                     </div>
                     <div class="contact-card">
                         <div class="contact-icon">📱</div>
                         <h3>WhatsApp</h3>
                         <p><a href="https://wa.me/5352002606">(+53) 52-00-2606</a></p>
+                        <p><a href="https://wa.me/5354470465">(+53) 54-47-0465</a></p>
                     </div>
                     <div class="contact-card">
                         <div class="contact-icon">✉️</div>
@@ -416,11 +417,10 @@
                     </div>
                 </div>
 
-                <!-- Formulario de Interés (lado derecho) -->
+                <!-- Formulario (columna derecha) -->
                 <form id="footer-interest-form" class="contact-form" aria-label="Formulario de interés">
                     <h3>¿Qué te interesa?</h3>
-
-                    <fieldset class="form-group">
+                    <fieldset class="form-group horizontal">
                         <legend>Deseo</legend>
                         <label><input type="radio" name="deseo" value="sesion" checked> Sesión de fotos</label>
                         <label><input type="radio" name="deseo" value="alquilar"> Alquilar el estudio</label>
@@ -428,13 +428,13 @@
 
                     <!-- Bloque para sesión (1.1) -->
                     <div id="sesion-block" class="conditional-block">
-                        <fieldset class="form-group">
+                        <fieldset class="form-group horizontal">
                             <legend>En</legend>
                             <label><input type="radio" name="tipo_sesion" value="estudio" checked> Estudio</label>
                             <label><input type="radio" name="tipo_sesion" value="exterior"> Exterior</label>
                         </fieldset>
 
-                        <fieldset class="form-group">
+                        <fieldset class="form-group horizontal">
                             <legend>Cantidad de fotos</legend>
                             <label><input type="radio" name="cantidad" value="5"> 5</label>
                             <label><input type="radio" name="cantidad" value="10"> 10</label>
@@ -447,7 +447,7 @@
 
                     <!-- Bloque tiempo / alquiler (1.2) -->
                     <div id="tiempo-block" class="conditional-block">
-                        <fieldset class="form-group">
+                        <fieldset class="form-group horizontal">
                             <legend>Tiempo</legend>
                             <label><input type="radio" name="tiempo" value="1h" checked> 1h</label>
                             <label><input type="radio" name="tiempo" value="2h"> 2h</label>
@@ -456,7 +456,7 @@
                             <label><input type="radio" name="tiempo" value="tarifa por hora"> tarifa por hora</label>
                         </fieldset>
 
-                        <fieldset class="form-group">
+                        <fieldset class="form-group equipos-group">
                             <legend>Incluir equipos</legend>
                             <label><input type="radio" name="equipos" value="no"> No, ninguno</label>
                             <label><input type="radio" name="equipos" value="flashes"> Solo Flashes Godox con difusores</label>

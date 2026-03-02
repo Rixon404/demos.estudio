@@ -132,7 +132,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const form = document.getElementById('footer-interest-form');
         if (!form) return;
         const deseoRadios = form.querySelectorAll('input[name="deseo"]');
-        const sesionBlock = document.getElementById('sesion-block');
+        const sesionBlock = document.getElementById('sesion-block'); //en estudio o exterior
         const tiempoBlock = document.getElementById('tiempo-block');
         const sendBtn = document.getElementById('footer-send-ws');
         const waNumber = '5354479465';
@@ -141,7 +141,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const deseo = form.querySelector('input[name="deseo"]:checked')?.value;
             if (deseo === 'sesion') {
                 sesionBlock.style.display = 'block';
-                tiempoBlock.style.display = 'block';
+                tiempoBlock.style.display = 'none';
             } else {
                 // alquilar: ocultar opciones de cantidad/tipo y mostrar tiempo/equipos
                 sesionBlock.style.display = 'none';

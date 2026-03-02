@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demos Estudio | Fotografía Profesional</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'azul-claro': '#C2E2FF',
+                        'azul-medio': '#69B4F5',
+                        'azul-fuerte': '#005AA8',
+                        'azul-oscuro': '#090670',
+                        'dorado': '#DB970F',
+                    },
+                    fontFamily: { sans: ['Plus Jakarta Sans', 'sans-serif'] }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { background-color: #090670; }
+        .glass { background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.1); }
+        .reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s ease-out; }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+    </style>
+</head>
+<body class="text-white scroll-smooth">
+
+    <nav class="fixed w-full z-50 px-6 py-4 flex justify-between items-center glass">
+        <div class="text-xl font-bold tracking-tighter">DEMOS<span class="text-dorado">.</span>ESTUDIO</div>
+        <div class="hidden md:flex gap-8 text-sm uppercase tracking-widest font-semibold">
+            <a href="#inicio" class="hover:text-dorado transition">Inicio</a>
+            <a href="#portafolio" class="hover:text-dorado transition">Portafolio</a>
+            <a href="#servicios" class="hover:text-dorado transition">Servicios</a>
+        </div>
+        <div class="flex gap-2">
+            <span class="text-dorado">ES</span> | <span class="text-gray-400 cursor-pointer">EN</span>
+        </div>
+    </nav>
+
+    <section id="inicio" class="relative min-h-screen flex items-center px-6 pt-20 overflow-hidden">
+        <div class="absolute inset-0 z-0 bg-[radial-gradient(circle_at_top_right,_#005AA8_0%,_#090670_70%)]"></div>
+        
+        <div class="container mx-auto grid md:grid-cols-2 gap-12 items-center relative z-10">
+            <div class="reveal active">
+                <h1 class="text-5xl md:text-7xl font-bold leading-tight mb-6">
+                    Capturamos su <span class="text-dorado">esencia</span>,<br>hacemos realidad su deseo.
+                </h1>
+                <p class="text-azul-claro text-lg mb-8 max-w-lg">
+                    Está pensado para brindarle comodidad desde que nos confía su idea hasta que recibe sus fotos. Tecnología mundial en el corazón del Vedado.
+                </p>
+                <div class="flex gap-4">
+                    <a href="#servicios" class="bg-dorado text-azul-oscuro px-8 py-4 rounded-full font-bold hover:scale-105 transition shadow-lg">Ver Tarifas</a>
+                    <a href="#portafolio" class="glass px-8 py-4 rounded-full font-bold hover:bg-white/10 transition">Galería</a>
+                </div>
+            </div>
+            <div class="relative reveal active" style="transition-delay: 200ms;">
+                <div class="glass p-4 rounded-[2rem] rotate-3 hover:rotate-0 transition-transform duration-500">
+                    <img src="https://images.unsplash.com/photo-1542038784456-1ea8e935640e?auto=format&fit=crop&q=80&w=800" alt="Fotografía" class="rounded-2xl w-full h-[400px] object-cover">
+                    <div class="absolute -bottom-6 -left-6 glass p-4 rounded-xl hidden md:block">
+                        <p class="text-dorado font-bold">★★★★★</p>
+                        <p class="text-xs text-azul-claro">Calidad Garantizada</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="portafolio" class="py-24 px-6">
+        <div class="container mx-auto text-center mb-16">
+            <h2 class="text-azul-claro uppercase tracking-[0.3em] text-sm mb-4">Nuestro Trabajo</h2>
+            <h3 class="text-4xl font-bold">Galería Profesional</h3>
+        </div>
+        <div class="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="reveal glass overflow-hidden rounded-2xl group cursor-pointer">
+                <img src="https://images.unsplash.com/photo-1508921912186-1d1a45ebb3c1?auto=format&fit=crop&q=60&w=600" loading="lazy" class="w-full h-80 object-cover group-hover:scale-110 transition duration-500">
+                <div class="p-4 text-center">Retratos Personales</div>
+            </div>
+            <div class="reveal glass overflow-hidden rounded-2xl group cursor-pointer" style="transition-delay: 100ms;">
+                <img src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&q=60&w=600" loading="lazy" class="w-full h-80 object-cover group-hover:scale-110 transition duration-500">
+                <div class="p-4 text-center">Bodas y Eventos</div>
+            </div>
+            <div class="reveal glass overflow-hidden rounded-2xl group cursor-pointer" style="transition-delay: 200ms;">
+                <img src="https://images.unsplash.com/photo-1484860137475-592b059d204d?auto=format&fit=crop&q=60&w=600" loading="lazy" class="w-full h-80 object-cover group-hover:scale-110 transition duration-500">
+                <div class="p-4 text-center">Quinceañeras</div>
+            </div>
+        </div>
+    </section>
+
+    <section id="servicios" class="py-24 px-6 bg-azul-fuerte/20">
+        <div class="container mx-auto">
+            <h2 class="text-center text-4xl font-bold mb-16">Servicios y Tarifas</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="reveal glass p-8 rounded-3xl border-t-4 border-dorado">
+                    <h4 class="text-xl font-bold mb-4">Retrato Básico</h4>
+                    <p class="text-3xl font-bold text-dorado mb-6">$30 <span class="text-sm text-white/60">USD</span></p>
+                    <ul class="text-azul-claro text-sm space-y-3 mb-8">
+                        <li>• 10 Fotos editadas</li>
+                        <li>• 1 Cambio de ropa</li>
+                        <li>• Sesión en estudio</li>
+                    </ul>
+                    <button class="w-full py-3 rounded-xl border border-dorado text-dorado hover:bg-dorado hover:text-white transition">Seleccionar</button>
+                </div>
+                <div class="reveal glass p-8 rounded-3xl border-t-4 border-azul-medio scale-105" style="transition-delay: 100ms;">
+                    <h4 class="text-xl font-bold mb-4">Estudio Premium</h4>
+                    <p class="text-3xl font-bold text-dorado mb-6">$50 <span class="text-sm text-white/60">USD</span></p>
+                    <ul class="text-azul-claro text-sm space-y-3 mb-8">
+                        <li>• 25 Fotos editadas</li>
+                        <li>• 3 Cambios de ropa</li>
+                        <li>• Maquillaje incluido</li>
+                    </ul>
+                    <button class="w-full py-3 rounded-xl bg-azul-medio text-azul-oscuro font-bold transition">Popular</button>
+                </div>
+                <div class="reveal glass p-8 rounded-3xl border-t-4 border-white" style="transition-delay: 200ms;">
+                    <h4 class="text-xl font-bold mb-4">Alquiler de Estudio</h4>
+                    <p class="text-3xl font-bold text-dorado mb-6">$20 <span class="text-sm text-white/60">USD/hr</span></p>
+                    <ul class="text-azul-claro text-sm space-y-3 mb-8">
+                        <li>• Uso de luces Pro</li>
+                        <li>• Fondos infinitos</li>
+                        <li>• Asistencia técnica</li>
+                    </ul>
+                    <button class="w-full py-3 rounded-xl border border-white text-white hover:bg-white hover:text-azul-oscuro transition">Consultar</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+
+    <section id="reservar" class="py-24 px-6 bg-black/20">
+        <div class="container mx-auto max-w-2xl">
+            <div class="glass p-10 rounded-[2.5rem] border-t-2 border-dorado">
+                <h2 class="text-3xl font-bold mb-2 text-center text-dorado">Reserva tu Sesión</h2>
+                <p class="text-center text-azul-claro mb-10 text-sm">Completa los datos y te atenderemos por WhatsApp.</p>
+                
+                <form id="whatsappForm" class="space-y-6">
+                    <div>
+                        <label class="block text-xs uppercase tracking-widest font-bold mb-2 text-azul-medio">Tu Nombre</label>
+                        <input type="text" id="name" required class="w-full bg-white/5 border border-white/10 rounded-xl p-4 focus:border-dorado outline-none transition" placeholder="Ej. Carlos García">
+                    </div>
+                    
+                    <div>
+                        <label class="block text-xs uppercase tracking-widest font-bold mb-2 text-azul-medio">Tipo de Sesión</label>
+                        <select id="service" class="w-full bg-white/5 border border-white/10 rounded-xl p-4 focus:border-dorado outline-none transition appearance-none">
+                            <option value="Retrato Personal" class="bg-azul-oscuro-deep">Retrato Personal</option>
+                            <option value="Quinceaños" class="bg-azul-oscuro-deep">Quinceaños / Bodas</option>
+                            <option value="Niños / Familia" class="bg-azul-oscuro-deep">Niños / Familia</option>
+                            <option value="Alquiler de Estudio" class="bg-azul-oscuro-deep">Alquiler de Estudio</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label class="block text-xs uppercase tracking-widest font-bold mb-2 text-azul-medio">Mensaje o Fecha</label>
+                        <textarea id="message" rows="3" class="w-full bg-white/5 border border-white/10 rounded-xl p-4 focus:border-dorado outline-none transition" placeholder="¿Tienes una idea específica?"></textarea>
+                    </div>
+
+                    <button type="submit" class="w-full bg-dorado py-4 rounded-xl font-bold text-lg hover:bg-yellow-600 transition flex justify-center items-center gap-2 shadow-xl shadow-dorado/20">
+                        Enviar a WhatsApp
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-12 px-6 border-t border-white/10 text-center">
+        <p class="text-azul-claro text-sm">© 2026 Demos Estudio - Vedado, La Habana.</p>
+    </footer>
+
+    <script>
+        document.getElementById('whatsappForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const name = document.getElementById('name').value;
+            const service = document.getElementById('service').value;
+            const msg = document.getElementById('message').value;
+            const myPhone = "5352002606";
+            const text = `¡Hola! Mi nombre es ${name}. Estoy interesado en una sesión de *${service}*. %0A%0A*Detalles:* ${msg}`;
+            const whatsappUrl = `https://wa.me/${myPhone}?text=${text}`;
+            
+            window.open(whatsappUrl, '_blank');
+        });
+
+        const observerOptions = { threshold: 0.1 };
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    </script>
+
+</body>
+</html>

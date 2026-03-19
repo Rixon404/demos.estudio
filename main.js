@@ -432,11 +432,9 @@ function buildMessage() {
         if (cantidad) msg += currentLang === 'es' ? `, podrían ser unas ${cantidad} fotos` : `, could be about ${cantidad} photos`;
     } else {
         msg += currentLang === 'es' ? 'alquilar el estudio' : 'renting the studio';
+        if (tiempo) msg += currentLang === 'es' ? `, tiempo estimado: ${tiempo}` : `, estimated time: ${tiempo}`;
+        if (equipos) msg += currentLang === 'es' ? `. Incluir equipos: ${equipos}.` : `. Include equipment: ${equipos}.`;
     }
-
-    if (tiempo) msg += currentLang === 'es' ? `, tiempo estimado: ${tiempo}` : `, estimated time: ${tiempo}`;
-    if (equipos) msg += currentLang === 'es' ? `. Incluir equipos: ${equipos}.` : `. Include equipment: ${equipos}.`;
-
     return msg;
 }
 

@@ -79,7 +79,7 @@
         </div>
     </section>
     
-    <!-- Portfolio Section -->
+    <!--Portfolio Section -->
     <section class="portfolio" id="portafolio">
         <div class="container">
             <div class="section-header reveal">
@@ -406,7 +406,7 @@
                     <h3 data-lang="reviews_title">Lo Que Dicen Nuestros Clientes</h3>
                     <div class="review-card">
                         <div class="review-stars">★★★★★</div>
-                        <p class="review-text" data-lang="review_1">"Increíble experiencia. Las fotos quedaron espectaculares y el trato fue excelente. Definitivamente recomendable."</p>
+                        <p class="review-text" data-lang="review_1">"Increíble experiencia. Las fotos quedaron espectaculares y el trato fue excelente. Definitivamente volveré."</p>
                         <p class="review-author">— @vannessa</p>
                     </div>
                     <div class="review-card">
@@ -530,7 +530,7 @@
                         <a href="https://maps.google.com/?q=23.13990126308201,-82.38115107740893" target="_blank" class="map-link" data-lang="contact_map_open">Abrir en Google Maps</a>
                     </div>
                 </div>
-                <div class="booking-form reveal-right">
+                <div id="booking" class="booking-form reveal-right">
                     <h3 data-lang="booking_title">Reserva tu Sesión</h3>
                     <form id="bookingForm">
                         <div class="form-group">
@@ -646,7 +646,10 @@
                     <a href="#contacto" data-lang="nav_contact">Contacto</a>
                 </div>
                 <div class="footer-social">
+                    <!--
                     <a href="https://wa.me/5352002606" class="social-link" target="_blank" title="WhatsApp">📱</a>
+                    -->
+                    <a href="#booking" class="social-link" target="_blank" title="WhatsApp">📱</a>
                     <a href="https://instagram.com/demos_estudio" class="social-link" target="_blank" title="Instagram">📷</a>
                     <a href="https://maps.google.com/?q=23.13990126308201,-82.38115107740893" class="social-link" target="_blank" title="Ubicación">📍</a>
                 </div>
@@ -658,7 +661,7 @@
     </footer>
 
     <!-- WhatsApp Float -->
-    <a href="https://wa.me/5352002606" class="whatsapp-float" target="_blank">
+    <a href="#booking" class="whatsapp-float" target="_blank">
         <img src="assets/icons_wsp/whatsapp-icon.png" alt="WhatsApp" class="whatsapp-float-icon">
         <span class="whatsapp-float-text" data-lang="whatsapp_text">Reserva ya!</span>
     </a>

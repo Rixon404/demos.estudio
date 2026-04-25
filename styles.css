@@ -26,7 +26,8 @@ html {
 }
 
 body {
-    font-family: 'Montserrat', sans-serif;
+    /*font-family: 'Montserrat', sans-serif;*/
+    font-family: 'Century Gothic Alternative', sans-serif; 
     background: var(--color-bg);
     color: var(--color-text);
     line-height: 1.7;
@@ -34,9 +35,74 @@ body {
 }
 
 h1, h2, h3, h4, h5 {
-    font-family: 'Playfair Display', serif;
+    font-family: 'Century Schoolbook', serif;
+    /*font-family: 'Playfair Display', serif;*/
     font-weight: 600;
     line-height: 1.3;
+}
+
+/* ===== FUENTES PERSONALIZADAS ===== */
+/* 1. Century Gothic Alternative */
+@font-face {
+  font-family: 'Century Gothic Alternative';
+  src: local('Century Gothic'),
+       local('CenturyGothic'),
+       url('fonts/century-gothic-alt.woff2') format('woff2'),
+       url('fonts/century-gothic-alt.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* 2. Century Schoolbook */
+@font-face {
+  font-family: 'Century Schoolbook';
+  src: local('Century Schoolbook'),
+       local('CenturySchoolbook'),
+       url('fonts/century-schoolbook.woff2') format('woff2'),
+       url('fonts/century-schoolbook.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* 3. Century (familia) */
+@font-face {
+  font-family: 'Century';
+  src: local('Century'),
+       local('Century Regular'),
+       url('fonts/century.woff2') format('woff2'),
+       url('fonts/century.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* 4. Minion Variable Concept */
+@font-face {
+  font-family: 'Minion Variable Concept';
+  src: local('Minion Variable'),
+       local('MinionVariable'),
+       local('Minion'),
+       url('fonts/minion-variable.woff2') format('woff2'),
+       url('fonts/minion-variable.woff') format('woff');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Clases de prueba para cada tipografía */
+.font-century-gothic {
+  font-family: 'Century Gothic Alternative', 'Century Gothic', 'Futura', sans-serif;
+}
+.font-century-schoolbook {
+  font-family: 'Century Schoolbook', 'Georgia', 'Times New Roman', serif;
+}
+.font-century {
+  font-family: 'Century', 'Century Schoolbook', 'Times New Roman', serif;
+}
+.font-minion {
+  font-family: 'Minion Variable Concept', 'Minion', 'Minion Pro', 'Georgia', serif;
 }
 
 a {

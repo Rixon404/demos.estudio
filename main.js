@@ -295,17 +295,16 @@ const translations = {
 let currentLang = 'es';
 
 // Mobile Menu Toggle
-const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-const navLinks = document.getElementById('navLinks');
-
-mobileMenuBtn?.addEventListener('click', (e) => {
-    e.stopPropagation();
-    navLinks.classList.toggle('open');
-});
+function toggleMenu() {
+    const menu = document.getElementById('mobile-menu');
+    menu?.classList.toggle('hidden');
+}
 
 document.addEventListener('click', (e) => {
-    if (!e.target.closest('nav') && navLinks.classList.contains('open')) {
-        navLinks.classList.remove('open');
+    const menu = document.getElementById('mobile-menu');
+    const btn = document.querySelector('.mobile-menu-btn');
+    if (menu && !menu.classList.contains('hidden') && !e.target.closest('#mobile-menu') && !e.target.closest('.mobile-menu-btn')) {
+        menu.classList.add('hidden');
     }
 });
 
@@ -348,16 +347,6 @@ const revealObserver = new IntersectionObserver((entries) => {
 
 revealElements.forEach(el => revealObserver.observe(el));
 
-// Nav Scroll Effect
-const nav = document.getElementById('nav');
-window.addEventListener('scroll', () => {
-    if (window.scrollY > 100) {
-        nav.classList.add('scrolled');
-    } else {
-        nav.classList.remove('scrolled');
-    }
-});
-
 // Smooth Scroll for Navigation
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
@@ -367,14 +356,15 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         if (target) {
             e.preventDefault();
             target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-            navLinks.classList.remove('open');
+            const mobileMenu = document.getElementById('mobile-menu');
+            if (mobileMenu) mobileMenu.classList.add('hidden');
         }
     });
 });
 
-// Portfolio Filter
+// Portfolio Filter (Masonry)
 const filterBtns = document.querySelectorAll('.filter-btn');
-const portfolioItems = document.querySelectorAll('.portfolio-item');
+const masonryItems = document.querySelectorAll('.masonry-item');
 
 filterBtns.forEach(btn => {
     btn.addEventListener('click', () => {
@@ -382,13 +372,15 @@ filterBtns.forEach(btn => {
         btn.classList.add('active');
         const filter = btn.getAttribute('data-filter');
 
-        portfolioItems.forEach(item => {
+        masonryItems.forEach(item => {
             if (filter === 'all' || item.getAttribute('data-category') === filter) {
-                item.style.display = 'block';
-                setTimeout(() => item.style.opacity = '1', 50);
+                item.classList.remove('hidden');
+                item.style.opacity = '1';
+                item.style.transform = 'scale(1)';
             } else {
                 item.style.opacity = '0';
-                setTimeout(() => item.style.display = 'none', 300);
+                item.style.transform = 'scale(0.8)';
+                setTimeout(() => item.classList.add('hidden'), 300);
             }
         });
     });
@@ -450,16 +442,18 @@ sendWs?.addEventListener('click', () => {
     window.open(url, '_blank');
 });
 
-// Particles Animation
+// Particles Animation (only if container exists)
 const particlesContainer = document.getElementById('particles');
-for (let i = 0; i < 30; i++) {
-    const particle = document.createElement('div');
-    particle.className = 'particle';
-    particle.style.left = Math.random() * 100 + '%';
-    particle.style.top = Math.random() * 100 + '%';
-    particle.style.animationDelay = Math.random() * 15 + 's';
-    particle.style.animationDuration = (15 + Math.random() * 10) + 's';
-    particlesContainer.appendChild(particle);
+if (particlesContainer) {
+    for (let i = 0; i < 30; i++) {
+        const particle = document.createElement('div');
+        particle.className = 'particle';
+        particle.style.left = Math.random() * 100 + '%';
+        particle.style.top = Math.random() * 100 + '%';
+        particle.style.animationDelay = Math.random() * 15 + 's';
+        particle.style.animationDuration = (15 + Math.random() * 10) + 's';
+        particlesContainer.appendChild(particle);
+    }
 }
 
 // Mapa de ubicación (Leaflet + OpenStreetMap)
